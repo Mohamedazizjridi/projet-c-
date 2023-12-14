@@ -1,0 +1,139 @@
+// Ecar application
+#include <stdio.h>
+#include <string.h>
+// structure pour representer une voiture 
+struct Voiture
+ {
+    int id;
+    char marque[50];
+    char modele[50];
+    int annee;
+    char statut[20];
+};
+// Structure pour représenter l'historique complet
+struct Historique {
+    struct Location *locations;
+    int nombreLocations;
+};
+// Structure pour représenter location dune voiture 
+struct Location {
+    int idVoiture;
+    char date[20];
+    char nomClient[50];
+    char statutRetour[20];
+};
+// Structure pour affichier une voiture 
+void afficherVoiture(struct Voiture voiture) {
+    printf("ID : %d\n", voiture.id);
+    printf("Marque : %s\n", voiture.marque);
+    printf("Modèle : %s\n", voiture.modele);
+    printf("Année : %d\n", voiture.annee);
+    printf("Statut : %s\n", voiture.statut);
+}
+// fonction pour louer une voiture 
+void louerVoiture(struct Voiture *voiture, struct Location *location) {
+    // Code pour effectuer la location
+    // Assurez-vous de mettre à jour le statut de la voiture et d'ajouter une entrée à l'historique des locations
+}
+// fonction pour supprimer une voiture 
+void supprimerVoitureEnPanne(struct Voiture *voiture) {
+    // Code pour supprimer une voiture en panne
+    // Cela peut inclure des actions comme mettre à jour le statut de la voiture ou la retirer de la liste des voitures disponibles
+}
+// fonction pour ajouter une nouvelle voiture 
+void modifierVoiture(struct Voiture *voiture, char nouvelleMarque[50], char nouveauModele[50], int nouvelleAnnee, char nouveauStatut[20]) 
+{
+    // Code pour modifier la description et l'état d'une voiture
+    // Cela peut inclure la mise à jour des différents champs de la structure Voiture
+}
+// fonction pour afficher lhistorique de locations 
+void afficherHistoriqueLocations(struct Location *locations, int nombreLocations) {
+    // Code pour afficher l'historique des locations
+    // Cela implique de parcourir le tableau des locations et d'afficher chaque entrée
+}
+// fonction pour retour du  voiture en cas de reclamation 
+void retourVoitureEnCasReclamation(struct Voiture *voiture, struct Location *location) {
+    // Code pour gérer le retour d'une voiture en cas de réclamation
+    // Cela peut inclure la mise à jour du statut de retour dans la structure Location
+}
+// fonction pour afficher les voitures disponibles
+void afficherVoituresDisponibles(struct Voiture *voitures, int nombreVoitures) {
+    // Code pour afficher toutes les voitures disponibles
+    // Cela implique de parcourir le tableau des voitures et d'afficher celles avec un statut "Disponible"
+}
+// fonction pour afficher les details d une location  
+void afficherDetailsLocation(struct Location *locations, int nombreLocations, int idLocation) {
+    // Code pour afficher les détails d'une location spécifique
+    // Cela implique de rechercher l'ID de la location dans le tableau des locations et d'afficher les détails
+}
+// fonction pour pour sauvegarder lhistorique des locations 
+void sauvegarderHistoriqueDansFichier(struct Historique *historique, char *nomFichier) {
+    // Code pour sauvegarder l'historique complet dans un fichier texte
+    // Cela peut impliquer l'ouverture d'un fichier en écriture et l'écriture des détails de chaque location
+}
+// fonction pour savoir les etats des voitures disponibles a lagence 
+void consulterEtatAgence(struct Voiture *voitures, int nombreVoitures) {
+    // Code pour afficher l'état des voitures disponibles à l'agence
+    // Cela peut impliquer de parcourir le tableau des voitures et d'afficher les détails de chaque voiture disponible
+}
+// fonction pour afficher lhistorique du jour
+void afficherHistoriqueJourParJour(struct Historique *historique) {
+    // Code pour afficher l'historique des locations jour par jour
+    // Cela peut impliquer de parcourir la structure Historique et d'afficher les détails de chaque location
+}
+// fonction pour afficher lhistorique du moi 
+void afficherHistoriqueMoisParMois(struct Historique *historique) {
+    // Code pour afficher l'historique des locations mois par mois
+    // Cela peut impliquer de regrouper les locations par mois et d'afficher les détails de chaque mois
+}
+
+int main() {
+    // cas simple pour tester lexecution 
+    struct Voiture voiture1 = {1, "Ferrari", "aziz", 2022, "Disponible"};
+    struct Location location1 = {1, "2023-01-01", "ines", "Non retournée"};
+
+    // afficher la description d'une voiture
+    afficherVoiture(voiture1);
+
+    // louer une voiture
+
+    louerVoiture(&voiture1, &location1);
+
+    // supprimer une voiture en panne
+    supprimerVoitureEnPanne(&voiture1);
+
+    // Modifier la description et l'état d'une voiture
+    modifierVoiture(&voiture1, "NouvelleMarque", "NouveauModèle", 2023, "Disponible");
+
+    // Afficher l'historique des locations
+    afficherHistoriqueLocations(&location1, 1);
+
+    // Retour d'une voiture en cas de réclamation
+    retourVoitureEnCasReclamation(&voiture1, &location1);
+
+    // Afficher toutes les voitures disponibles
+    afficherVoituresDisponibles(&voiture1, 1);
+
+    // Afficher les détails d'une location spécifique
+    afficherDetailsLocation(&location1, 1, 1);
+
+    // Créer une structure pour l'historique complet
+    struct Historique historique;
+    historique.locations = &location1;
+    historique.nombreLocations = 1;
+
+    // Sauvegarder l'historique dans un fichier
+    sauvegarderHistoriqueDansFichier(&historique, "historique.txt");
+
+    // Consulter l'état de l'agence
+    consulterEtatAgence(&voiture1, 1);
+
+    // Afficher l'historique jour par jour
+    afficherHistoriqueJourParJour(&historique);
+
+    // Afficher l'historique mois par mois
+    afficherHistoriqueMoisParMois(&historique);
+
+    return 0;
+    // merci beaucoup pour cette opportunité
+}
